@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './App.styles.scss';
+import CardList from '../../components/card-list/card-list.component';
+import './app.styles.scss';
 
 function App() {
   const [monsters, setMonsters] = useState([])
@@ -12,13 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      {
-        monsters.map(monster => {
-          return (
-            <h1 key={monster.id}>{monster.name}</h1>
-          )
-        })
-      }
+      <CardList cards={monsters} />
     </div>
   );
 }
