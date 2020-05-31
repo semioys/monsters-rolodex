@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from '../../components/card/card.component';
 import './card-list.styles.scss';
 
 function CardList({ cards }) {
@@ -8,7 +9,7 @@ function CardList({ cards }) {
       {
         cards.map(monster => {
           return (
-            <h1 key={monster.id}>{monster.name}</h1>
+            <Card key={monster.id} card={monster} />
           )
         })
       }
