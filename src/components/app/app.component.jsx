@@ -4,6 +4,7 @@ import './app.styles.scss';
 
 function App() {
   const [monsters, setMonsters] = useState([]);
+  const [searchField, setsearchField] = useState('');
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <div className="App">
+      <input type="search" placeholder="Search monsters" onChange={ (e) => setsearchField(e.target.value) }/>
       <CardList cards={monsters} />
     </div>
   );
